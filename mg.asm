@@ -1,10 +1,10 @@
 ;----------------------------------------------------------;
 ; Melody Generator  (C)ChaN, 2005
 
-
-.include "tn45def.inc"	;This is included in "Atmel AVR Studio"
-.include "avr.inc"
-.include "mg.inc"
+; in line 256 modify if you include other asm file/song 
+.include "tn85def.inc"	;This is included in "Atmel AVR Studio"
+.include "D:\mg/avr.inc"
+.include "D:\mg/mg.inc"
 
 .def	_0	= r15
 .def	_Sreg	= r14
@@ -253,7 +253,7 @@ tone_lp:
 ;--------------------------------------------------------------------;
 
 score:
-.include "melody.asm"
+.include "D:\mg/starmachine 2000.asm"
 
 
 ;--------------------------------------------------------------------;
@@ -300,7 +300,7 @@ envelope:
 ;--------------------------------------------------------------------;
 ; 8bit, 32 ksps, 250 Hz fundamental frequency
 
-	.org	3072/2	; Bottom stored
+	.org 3584	; Bottom stored
 
 wt_attack: ; Attack area
 	.db 0, 0, 0, 0, 0, 0, -1, -2, -2, -3, -2, -2, -1, 0, 0, 0
